@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+<head th:replace="fragments :: head"></head>
+
+<body class="container">
+
+<!-- <h1 th:text="${title}">Default Title</h1> -->
+<h1>My Library</h1>
+
+
+<nav th:replace="fragments :: navigation"></nav>
+
+<p th:unless="${books} and ${books.size()}">No books currently in the library. Click Add to add a book.</p>
+
+
+<table class="table">
+
+    <tr>
+        <th>Title</th>
+        <th>Author</th>
+        <th>Genre</th>
+        <th>Description</th>
+        <th>Reading Level</th>
+        <th>Student Name</th>
+    </tr>
+
+    <tr th:each="book : ${books}">
+        <td th:text="${book.title}"></td>
+        <td th:text="${book.author}"></td>
+        <td th:text="${book.genre}"></td>
+        <td th:text="${book.description}"></td>
+        <td th:text="${book.readinglevel}"></td>
+        <td th:text="${book.studentname}"></td>
+    </tr>
+
+</table>
+
+</body>
+</html>
