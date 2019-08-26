@@ -18,19 +18,23 @@
     <tr>
         <th>Title</th>
         <th>Author</th>
-        <th>Genre</th>
         <th>Description</th>
+        <!--
+        <th>Genre</th>
         <th>Reading Level</th>
         <th>Student Name</th>
+        -->
     </tr>
 
     <tr th:each="book : ${books}">
         <td th:text="${book.title}"></td>
         <td th:text="${book.author}"></td>
-        <td th:text="${book.genre}"></td>
         <td th:text="${book.description}"></td>
+        <!--
+        <td th:text="${book.genre}"></td>
         <td th:text="${book.readinglevel}"></td>
         <td th:text="${book.studentname}"></td>
+        -->
     </tr>
 
 </table>

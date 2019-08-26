@@ -41,7 +41,7 @@ public class LibraryController {
     @RequestMapping(value = "add", method = RequestMethod.POST)
     public String processAddBookForm(@ModelAttribute @Valid Book newBook,
                                        Errors errors,
-                                       @RequestParam int bookId,
+                                       // @RequestParam int bookId,
                                        Model model) {
 
 
