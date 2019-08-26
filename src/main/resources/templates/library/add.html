@@ -19,7 +19,8 @@
         <span th:errors="*{author}" class="error"></span>
     </div>
 
-    <!-- <div class="form-group">
+    <!--
+    <div class="form-group">
         <label th:for="genre">Genre</label>
         <select title="genreId">
             <option th:each="genre : ${genres}"
@@ -27,7 +28,6 @@
                     th:value="${genre.id}"></option>
         </select>
     </div>
-
     -->
 
     <div class="form-group">
@@ -37,20 +37,20 @@
     </div>
 
 
-    <!-- <div class="form-group">
+    <!--
+    <div class="form-group">
         <label th:for="level">Reading Level</label>
         <input class="form-control" th:field="*{level}" />
         <span th:errors="*{level}" class="error"></span>
     </div>
+    -->
 
 
     <div class="form-group">
-        <label th:for="student-title">Student Name</label>
-        <input class="form-control" th:field="*{student-title}" />
-        <span th:errors="*{student-title}" class="error"></span>
+        <label th:for="studentname">Student Name</label>
+        <input class="form-control" th:field="*{studentname}" />
+        <span th:errors="*{studentname}" class="error"></span>
     </div>
-
-    -->
 
     <input type="submit" value="Add Book" />
 </form>

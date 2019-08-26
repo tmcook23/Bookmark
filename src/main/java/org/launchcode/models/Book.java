@@ -26,12 +26,17 @@ public class Book {
     @Size(min=1, message = "Description must not be empty")
     private String description;
 
+    @Size(max=100)
+    private String studentname;
+
     // @ManyToOne
     // private Genre genre;
 
-    public Book(String name, String description) {
+
+    public Book(String name, String description, String studentname) {
         this.title = name;
         this.description = description;
+        this.studentname = studentname;
     }
 
     public Book() { }
@@ -59,5 +64,9 @@ public class Book {
     public void setDescription(String description) {
         this.description = description;
     }
+
+    public String getStudentname() { return studentname; }
+
+    public void setStudentname(String studentname) { this.studentname = studentname; }
 
 }
