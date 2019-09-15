@@ -6,7 +6,7 @@
 
 <nav th:replace="fragments :: navigation"></nav>
 
-<h2 th:text="'Edit Book ' + ${book.getTitle()} + '(id=' + ${book.getId()}+')'"></h2>
+<h2 th:text="'Edit &quot;' + ${book.getTitle()} +'&quot;'"></h2>
 
 <form method="post" style="max-width:600px;" action="/library/edit" th:object="${book}">
     <div class="form-group">
