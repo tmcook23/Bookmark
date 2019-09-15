@@ -65,4 +65,15 @@ public class LibraryController {
         return "library/remove";
     }
 
+    @RequestMapping(value = "remove", method = RequestMethod.POST)
+    public String processRemoveBookForm(@RequestParam int[] bookIds) {
+
+        for (int bookId : bookIds) {
+            bookDao.delete(bookId);
+        }
+
+        return "redirect:";
+    }
+
+
 }
