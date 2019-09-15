@@ -58,4 +58,11 @@ public class LibraryController {
 
     }
 
+    @RequestMapping(value = "remove", method = RequestMethod.GET)
+    public String displayRemoveBookForm(Model model) {
+        model.addAttribute("books", bookDao.findAll());
+        model.addAttribute("title", "Remove Book");
+        return "library/remove";
+    }
+
 }
