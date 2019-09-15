@@ -10,6 +10,8 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
+
 import javax.validation.Valid;
 
 
@@ -72,6 +74,24 @@ public class LibraryController {
             bookDao.delete(bookId);
         }
 
+        return "redirect:";
+    }
+
+    @RequestMapping(value = "edit/{bookId}", method = RequestMethod.GET)
+    public String displayEditForm(Model model, @PathVariable int bookId) {
+        Book b = bookDao.findOne(bookId);
+        model.addAttribute("book", b);
+        return "library/edit";
+    }
+
+    @RequestMapping(value = "edit", method = RequestMethod.POST)
+    public String processEditForm(int bookId, String title, String author, String description, String studentname) {
+        Book b = bookDao.findOne(bookId); // grab object by the ID
+        b.setTitle(title); // use the setters to change the value
+        b.setAuthor(author);
+        b.setDescription(description);
+        b.setStudentname(studentname);
+        bookDao.save(b);
         return "redirect:";
     }
 
